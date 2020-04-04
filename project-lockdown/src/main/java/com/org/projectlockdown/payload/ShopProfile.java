@@ -1,11 +1,6 @@
-package com.org.projectlockdown.model;
+package com.org.projectlockdown.payload;
 
-/**
- * An Abstract class for Shop : ProjectLockDown
- *
- * @Author Ian Nechenje
- * */
-public abstract class AShop {
+public class ShopProfile {
 
     private String shopName;
 
@@ -13,20 +8,16 @@ public abstract class AShop {
 
     private String businessType;
 
-    private String password;
+    private String branchName;
 
-    // To change to LatLong
     private String physicalLocation;
 
-    public AShop() {
-    }
-
-    public AShop(String shopName, long phoneNumber, String businessType, String physicalLocation, String password) {
+    public ShopProfile(String shopName, long phoneNumber, String businessType, String branchName, String physicalLocation) {
         this.shopName = shopName;
         this.phoneNumber = phoneNumber;
         this.businessType = businessType;
+        this.branchName = branchName;
         this.physicalLocation = physicalLocation;
-        this.password = password;
     }
 
     public String getShopName() {
@@ -53,6 +44,14 @@ public abstract class AShop {
         this.businessType = businessType;
     }
 
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
+
     public String getPhysicalLocation() {
         return physicalLocation;
     }
@@ -60,19 +59,4 @@ public abstract class AShop {
     public void setPhysicalLocation(String physicalLocation) {
         this.physicalLocation = physicalLocation;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public abstract void signup();
-
-    public abstract boolean deleteAccount();
-
-
-
 }

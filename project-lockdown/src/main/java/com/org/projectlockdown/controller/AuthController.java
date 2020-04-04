@@ -46,7 +46,7 @@ public class AuthController {
         return ResponseEntity.created(location).body(new ApiResponse(true,  "User registered successfully."));
     }
 
-    @PostMapping("/supermarkets/signup")
+    @PostMapping("/supermarket/signup")
     public ResponseEntity<?> registerBusinessEntity(@Valid @RequestBody Supermarket supermarketSignupRequest) {
 
         if(supermarketRepository.existsByBranchName(supermarketSignupRequest.getBranchName())){
@@ -64,12 +64,5 @@ public class AuthController {
     }
 
 
-    //TODO
-    // Authentication to be done by OTP Service
-    @PostMapping("/signin")
-    public ResponseEntity<?> customerSignIn() {
-
-        // Call External project-lockdown-otp-auth
-    }
 
 }

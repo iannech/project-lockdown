@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("api/lockdown")
+@RequestMapping(value = "api/lockdown")
 public class AuthController {
 
 

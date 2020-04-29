@@ -12,6 +12,8 @@ public class ScheduleShoppingRequest implements Serializable {
 
     private List<Metadata> additionalData;
 
+    private Date timestamp;
+
     public Date getShoppingTime() {
         return shoppingTime;
     }
@@ -34,6 +36,14 @@ public class ScheduleShoppingRequest implements Serializable {
 
     public void setAdditionalData(List<Metadata> additionalData) {
         this.additionalData = additionalData;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     // add List accessor

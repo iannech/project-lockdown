@@ -12,6 +12,16 @@ public class ScheduleShoppingResponse implements Serializable {
     private String requestID;
     private String operationName;
 
+    public ScheduleShoppingResponse(String responseCode, String responseMessage, String requestID, String operationName) {
+        this.responseCode = responseCode;
+        this.responseMessage = responseMessage;
+        this.requestID = requestID;
+        this.operationName = operationName;
+    }
+
+    public ScheduleShoppingResponse() {
+    }
+
     public String getResponseCode() {
         return responseCode;
     }

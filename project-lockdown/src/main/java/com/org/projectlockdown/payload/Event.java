@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @Standard Event model across all services raising events.
  * */
-public class ScheduleShoppingEvent {
+public class Event {
 
     private long id;
 

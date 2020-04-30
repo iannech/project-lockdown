@@ -1,6 +1,5 @@
 package com.org.projectlockdown.config;
 
-import com.org.projectlockdown.payload.ScheduleShoppingResponse;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,15 @@ public class ConfigProperties {
     private String statusOk;
     private String badRequest;
     private String serverError;
+
+    // Event params
+    private long subscriptionId;
+    private String key;
+    private String message;
+
+    // Queue/Topic
+    private String eventsTopic;
+
 
     public String getWhitelistedApps() {
         return whitelistedApps;
@@ -48,5 +56,37 @@ public class ConfigProperties {
 
     public void setServerError(String serverError) {
         this.serverError = serverError;
+    }
+
+    public long getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(long subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getEventsTopic() {
+        return eventsTopic;
+    }
+
+    public void setEventsTopic(String eventsTopic) {
+        this.eventsTopic = eventsTopic;
     }
 }

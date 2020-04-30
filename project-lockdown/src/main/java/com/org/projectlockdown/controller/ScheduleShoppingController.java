@@ -53,15 +53,8 @@ public class ScheduleShoppingController {
         } else {
 
             // forward request to shopping service via broker
-            @NotNull
-            String phoneNumber = shoppingRequest.getCustomerPhoneNumber();
-            @NotNull
-            String shoppingTime = String.valueOf(shoppingRequest.getShoppingTime());
 
-            //@TODO extract additional data from request
-
-
-            shoppingScheduler.scheduleShoppingTime();
+            shoppingScheduler.scheduleShoppingTime(shoppingRequest, requestID);
 
             // Send acknowledgement to customer
             scheduleShoppingResponse  = new ScheduleShoppingResponse(Constants.STATUS_OK, configProperties.getStatusOk(), requestID, operationName);

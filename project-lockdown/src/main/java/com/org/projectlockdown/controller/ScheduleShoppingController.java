@@ -65,9 +65,9 @@ public class ScheduleShoppingController {
         // respond to customer with acknowledgement
     }
 
-    @PostMapping(value = "/schedule-shopping/callback")
-    public CallbackResponse scheduleShoppingCallback() {
-
-
-    }
+//    @PostMapping(value = "/schedule-shopping/callback")
+//    public CallbackResponse scheduleShoppingCallback() {
+//
+//
+//    }
 }

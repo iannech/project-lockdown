@@ -1,5 +1,6 @@
 package com.org.projectlockdown.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.org.projectlockdown.config.ConfigProperties;
 import com.org.projectlockdown.messaging.EventProducer;
 import com.org.projectlockdown.payload.Event;
@@ -20,7 +21,7 @@ public class ShoppingScheduler {
     EventProducer eventProducer;
 
     // ASYNC Process
-    public void scheduleShoppingTime(ScheduleShoppingRequest shoppingRequest, String requestID) {
+    public void scheduleShoppingTime(ScheduleShoppingRequest shoppingRequest, String requestID) throws JsonProcessingException {
 
         Random random = new Random();
         int id = 10000 + random.nextInt(900000)+Integer.parseInt(requestID);

@@ -23,7 +23,9 @@ public class ConfigProperties {
     private String message;
 
     // Queue/Topic
-    private String eventsTopic;
+    private String exchangeName;
+    private String routingKey;
+    private String queueName;
 
 
     public String getWhitelistedApps() {
@@ -82,11 +84,27 @@ public class ConfigProperties {
         this.message = message;
     }
 
-    public String getEventsTopic() {
-        return eventsTopic;
+    public String getExchangeName() {
+        return exchangeName;
     }
 
-    public void setEventsTopic(String eventsTopic) {
-        this.eventsTopic = eventsTopic;
+    public void setExchangeName(String exchangeName) {
+        this.exchangeName = exchangeName;
+    }
+
+    public String getRoutingKey() {
+        return routingKey;
+    }
+
+    public void setRoutingKey(String routingKey) {
+        this.routingKey = routingKey;
+    }
+
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public void setQueueName(String queueName) {
+        this.queueName = queueName;
     }
 }

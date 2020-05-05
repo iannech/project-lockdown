@@ -30,7 +30,8 @@ public class EventProducer {
     public void onEvent(Event event) throws JsonProcessingException {
         try {
 
-            rabbitTemplate.convertAndSend(configProperties.getEventsTopic(), Utils.writeObjectAsString(event));
+            rabbitTemplate.convertAndSend(configProperties.getExchangeName(), configProperties.getRoutingKey(),
+                    Utils.writeObjectAsString(event));
 
         }catch (Exception e) {
 

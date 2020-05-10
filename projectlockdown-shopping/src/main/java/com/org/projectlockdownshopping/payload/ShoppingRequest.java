@@ -7,21 +7,13 @@ import java.util.*;
 public class ShoppingRequest implements Serializable {
 
 
-    private String phoneNumber;
-
     private Date shoppingTime;
 
-    private Instant timestamp;
+    private String customerPhoneNumber;
 
-    private List<Metadata> metadata = new ArrayList<>();
+    private List<Metadata> additionalData;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    private Date timestamp;
 
     public Date getShoppingTime() {
         return shoppingTime;
@@ -31,26 +23,34 @@ public class ShoppingRequest implements Serializable {
         this.shoppingTime = shoppingTime;
     }
 
-    public Instant getTimestamp() {
+    public String getCustomerPhoneNumber() {
+        return customerPhoneNumber;
+    }
+
+    public void setCustomerPhoneNumber(String customerPhoneNumber) {
+        this.customerPhoneNumber = customerPhoneNumber;
+    }
+
+    public List<Metadata> getAdditionalData() {
+        return additionalData;
+    }
+
+    public void setAdditionalData(List<Metadata> additionalData) {
+        this.additionalData = additionalData;
+    }
+
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Instant timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public List<Metadata> getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(List<Metadata> metadata) {
-        this.metadata = metadata;
     }
 
     public Map fetchFromMap() {
         Map<String, String> map = new HashMap<>();
 
-        for(Metadata m : metadata) {
+        for(Metadata m : additionalData) {
             map.put(m.getKey(), m.getValue());
         }
         return map;

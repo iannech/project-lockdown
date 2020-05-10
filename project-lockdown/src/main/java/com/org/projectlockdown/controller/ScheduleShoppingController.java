@@ -15,8 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -56,18 +57,13 @@ public class ScheduleShoppingController {
 
             shoppingScheduler.scheduleShoppingTime(shoppingRequest, requestID);
 
+            Date date = new Date();
             // Send acknowledgement to customer
-            scheduleShoppingResponse  = new ScheduleShoppingResponse(Constants.STATUS_OK, configProperties.getStatusOk(), requestID, operationName);
+            scheduleShoppingResponse  = new ScheduleShoppingResponse(Constants.STATUS_OK, configProperties.getStatusOk(), requestID, operationName, new Timestamp(date.getTime()));
             return scheduleShoppingResponse;
 
         }
 
-        // respond to customer with acknowledgement
     }
 
-//    @PostMapping(value = "/schedule-shopping/callback")
-//    public CallbackResponse scheduleShoppingCallback() {
-//
-//
-//    }
 }

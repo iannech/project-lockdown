@@ -1,6 +1,7 @@
 package com.org.projectlockdown.payload;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * Have Shoppi
@@ -11,12 +12,15 @@ public class ScheduleShoppingResponse implements Serializable {
     private String responseMessage;
     private String requestID;
     private String operationName;
+    private Timestamp timestamp;
 
-    public ScheduleShoppingResponse(String responseCode, String responseMessage, String requestID, String operationName) {
+    public ScheduleShoppingResponse(String responseCode, String responseMessage, String requestID, String operationName,
+                                    Timestamp timestamp) {
         this.responseCode = responseCode;
         this.responseMessage = responseMessage;
         this.requestID = requestID;
         this.operationName = operationName;
+        this.timestamp = timestamp;
     }
 
     public ScheduleShoppingResponse() {
@@ -52,5 +56,13 @@ public class ScheduleShoppingResponse implements Serializable {
 
     public void setOperationName(String operationName) {
         this.operationName = operationName;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }
